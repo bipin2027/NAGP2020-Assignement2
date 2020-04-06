@@ -9,7 +9,7 @@ import com.bipin.nagp2020.microservices.assignment2.aggregationservice.model.Use
 /**
  * The Interface UserServiceFeignClient.
  */
-@FeignClient(name="user-service-feign-client", url ="http://localhost:8700")
+@FeignClient(name="user-service-feign-client", url ="${USER_SERVICE_URI:http://localhost}:8700")
 public interface UserServiceFeignClient {
 	@GetMapping("/user/{userId}")
 	User retriveUserDetails(@PathVariable("userId") String userId);

@@ -9,7 +9,7 @@ import com.bipin.nagp2020.microservices.assignment2.aggregationservice.model.Use
 /**
  * The Interface OrderServiceFeignClient.
  */
-@FeignClient(name="order-service-feign-client", url ="http://localhost:8686")
+@FeignClient(name="order-service-feign-client", url ="${ORDER_SERVICE_URI:http://localhost}:8686")
 public interface OrderServiceFeignClient {
 	@GetMapping("/order/{userId}")
 	UserOrderList retriveUserOrder(@PathVariable("userId") String userId);
